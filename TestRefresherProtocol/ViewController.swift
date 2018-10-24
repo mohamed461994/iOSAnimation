@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var redUIView: UIView!
+    @IBOutlet weak var viewToFly: UIView!
     
     @IBOutlet weak var blackViewHightConstraint: NSLayoutConstraint!
     @IBOutlet weak var redHightConstrain: NSLayoutConstraint!
@@ -98,6 +99,62 @@ class ViewController: UIViewController {
                           },
                           completion: nil)
     }
+    
+    @IBAction func animateAlpha(_ sender: Any) {
+        redUIView.alpha = 1.0
+        UIView.animate(withDuration: 4.5,
+                       animations: {
+                        self.redUIView.alpha = 0.0
+                        },
+                       completion: { _ in
+                        self.redUIView.alpha = 1.0
+                        })
+    }
+    
+    @IBAction func animateTransform(_ sender: Any) {
+        let redViewX = redUIView.frame.origin.x
+        let redViewY = redUIView.frame.origin.y
+        UIView.animate(withDuration: 1.0,
+                       animations: {
+                        self.redUIView.transform = CGAffineTransform(translationX: (redViewX + 50.0), y: (redViewY + 50.0) )
+                       },
+                       completion: {_ in
+                       })
+        
+    }
+    
+    @IBAction func animatKeyFrames(_ sender: UIButton) {
+        UIView.animateKeyframes(withDuration: 1.5,
+        delay: 0.0,
+        animations: {
+            
+            // move to right and up
+            UIView.addKeyframe(withRelativeStartTime: 0.0,
+                               relativeDuration: 0.25,
+                               animations: {
+                                self.viewToFly.center.x += 90
+                                self.viewToFly.center.y -= 100
+            })
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.25,
+                               relativeDuration: 1.25,
+                               animations: {
+                                self.viewToFly.center.x += 400
+                                self.viewToFly.center.y -= 400
+                                self.viewToFly.alpha = 0.0
+            })
+            
+        }, completion: {_ in
+            self.viewToFly.removeFromSuperview()
+            sender.isEnabled = false
+        })
+        
+
+    }
+
+
+    
+    
 
     @objc private func refreshWeatherData(_ sender: Any) {
 //        if (!tableView.refreshControl!.isRefreshing) {

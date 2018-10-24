@@ -109,6 +109,18 @@
                                     <action selector="animatKeyFrames:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wpg-kN-IcH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qL-bd-h3U">
+                                <rect key="frame" x="190" y="413" width="175" height="190"/>
+                                <color key="backgroundColor" red="1" green="0.56074835280000002" blue="0.050194312480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="tHi-8F-0uT"/>
+                                    <constraint firstAttribute="width" constant="175" id="zIh-6S-5P2"/>
+                                </constraints>
+                                <state key="normal" title="Animate ViewController"/>
+                                <connections>
+                                    <action selector="animateViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wNe-AV-Rl3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -121,10 +133,12 @@
                             <constraint firstItem="oYJ-hS-aSw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VGT-HZ-FWK"/>
                             <constraint firstItem="pMp-xR-fYT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="VeQ-Ih-FBq"/>
                             <constraint firstItem="E8k-BW-5eT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="bkN-qP-Asu"/>
+                            <constraint firstItem="La5-eH-VF1" firstAttribute="top" secondItem="9qL-bd-h3U" secondAttribute="bottom" constant="14" id="dH4-0d-0WS"/>
                             <constraint firstItem="DK7-G9-mTO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f9S-l9-Vow"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1fZ-xl-kXP" secondAttribute="bottom" constant="64" id="hvQ-HP-tOF"/>
                             <constraint firstItem="1fZ-xl-kXP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="l9O-0c-jAo"/>
                             <constraint firstItem="cWp-4k-a3X" firstAttribute="top" secondItem="pMp-xR-fYT" secondAttribute="bottom" constant="16" id="lcr-g5-wug"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9qL-bd-h3U" secondAttribute="trailing" constant="10" id="m4c-My-JzG"/>
                             <constraint firstItem="E8k-BW-5eT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="190" id="nbs-Fj-d73"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uBd-8I-kJA" secondAttribute="bottom" constant="20" id="rX1-Jo-ZcJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DK7-G9-mTO" secondAttribute="bottom" constant="12" id="uAC-2I-ktc"/>
@@ -160,6 +174,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="27.436281859070466"/>
+        </scene>
+        <!--Animated View Controller-->
+        <scene sceneID="uoz-sD-W3a">
+            <objects>
+                <viewController storyboardIdentifier="AnimatedViewController" id="Aq7-FR-giA" customClass="AnimatedViewController" customModule="TestRefresherProtocol" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rp3-ka-Vqg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVy-55-rQr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="1" green="0.56074835280000002" blue="0.050194312480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="KNw-e1-7vJ"/>
+                                    <constraint firstAttribute="height" constant="667" id="QAb-jQ-K4W"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="Ny8-eC-0Kl"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.56074835281318025" blue="0.050194312476140923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RVy-55-rQr" firstAttribute="width" secondItem="rp3-ka-Vqg" secondAttribute="width" id="3FC-f0-j7K"/>
+                            <constraint firstItem="RVy-55-rQr" firstAttribute="top" secondItem="rp3-ka-Vqg" secondAttribute="top" id="Cs5-uV-D5N"/>
+                            <constraint firstItem="RVy-55-rQr" firstAttribute="leading" secondItem="mPh-9r-KAV" secondAttribute="leading" id="M8Z-ZB-eoC"/>
+                            <constraint firstItem="RVy-55-rQr" firstAttribute="trailing" secondItem="mPh-9r-KAV" secondAttribute="trailing" id="RYY-yO-8jo"/>
+                            <constraint firstItem="RVy-55-rQr" firstAttribute="height" secondItem="rp3-ka-Vqg" secondAttribute="height" id="Xun-w0-hk7"/>
+                            <constraint firstItem="RVy-55-rQr" firstAttribute="bottom" secondItem="mPh-9r-KAV" secondAttribute="bottom" id="tRN-iP-MSk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mPh-9r-KAV"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="RVy-55-rQr" id="6du-3L-lNo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gy-22-i4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1792.8" y="41.829085457271368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iFO-WE-uk1">

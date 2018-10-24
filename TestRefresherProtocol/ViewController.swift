@@ -153,6 +153,10 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func animateViewController(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AnimatedViewController") as! AnimatedViewController
+        self.present(vc, animated: true)
+    }
     
     
 

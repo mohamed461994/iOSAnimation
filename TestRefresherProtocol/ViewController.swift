@@ -16,9 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var blackViewHightConstraint: NSLayoutConstraint!
     @IBOutlet weak var redHightConstrain: NSLayoutConstraint!
 
+    @IBOutlet weak var imageToAnimate: UIButton!
     @IBOutlet weak var hightConstrain: NSLayoutConstraint!
     @IBOutlet weak var hightConstrain1: NSLayoutConstraint!
     @IBOutlet weak var hightConstrain2: NSLayoutConstraint!
+    
+    let transition = PpupAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,6 +158,7 @@ class ViewController: UIViewController {
 
     @IBAction func animateViewController(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "AnimatedViewController") as! AnimatedViewController
+        vc.transitioningDelegate = self
         self.present(vc, animated: true)
     }
     
@@ -164,6 +168,23 @@ class ViewController: UIViewController {
 //        if (!tableView.refreshControl!.isRefreshing) {
 //            tableView.refreshControl?.endRefreshing()
 //        }
+    }
+}
+
+
+
+extension ViewController: UIViewControllerTransitioningDelegate {
+    func animationController(
+        forPresented presented: UIViewController,
+        presenting: UIViewController,
+        source: UIViewController
+        ) -> UIViewControllerAnimatedTransitioning? {
+        transition.originFrame = imageToAnimate!.convert(imageToAnimate.frame, to: nil)
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
     }
 }
 
